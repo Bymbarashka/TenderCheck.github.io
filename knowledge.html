@@ -1,64 +1,69 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Кейсы, статьи и пример отчёта - TenderCheck</title>
+  <title>База знаний - TenderCheck</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>кейсы и отчёты</small></span></a>
-    <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="main-nav"><a href="index.html">Главная</a><a href="#articles">Статьи</a><a href="#demo-report">Демо-отчёт</a><a href="suppliers.html">Поставщикам</a><a href="legal.html">Документы</a><a class="nav-cta" href="index.html#upload">Загрузить документы</a></nav>
+<body class="portal-body">
+  <header class="portal-header">
+    <div class="service-bar"><div class="container service-bar-inner"><span>Оператор: ООО "Геоинформационные системы"</span><a href="mailto:gdd@icsis.ru">gdd@icsis.ru</a><span>Пн-Пт, 10:00-18:00</span><a href="legal.html">Документы</a></div></div>
+    <div class="site-header"><a class="brand" href="index.html"><img src="assets/img/logo-clean.png" alt=""><span><strong>TenderCheck</strong><small>база знаний</small></span></a><button class="nav-toggle" type="button" aria-label="Открыть меню"><span></span><span></span><span></span></button><nav class="main-nav"><a href="index.html">Главная</a><a href="clients.html">Клиентам</a><a href="suppliers.html">Поставщикам</a><a href="report.html">Пример отчёта</a><a href="legal.html">Документы</a><a class="nav-cta" href="index.html#upload">Создать заявку</a></nav></div>
   </header>
 
   <main>
-    <section class="page-hero">
+    <section class="page-hero portal-page-hero">
       <div class="container">
         <p class="eyebrow">База знаний</p>
-        <h1>Типовые ситуации, где разбор экономит деньги</h1>
-        <p class="lead">Пока нет подтверждённых публичных кейсов, используем честный формат: типовой сценарий без выдуманных цифр.</p>
+        <h1>Типовые ситуации без выдуманных кейсов и цифр</h1>
+        <p class="lead">Пока нет подтверждённых публичных кейсов, используем честный формат: типовые сценарии, проблема, опасность, что проверяет TenderCheck и что получает клиент.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="container case-grid">
-        <article class="case-card"><img src="assets/img/audit-estimate.png" alt=""><div><h2>КП на видеонаблюдение: не учтены скрытые блоки</h2><p>В смете есть камеры и монтаж, но нет ИБП, шкафов, ПНР, архива и исполнительной документации.</p><strong>Что даёт разбор: клиент видит неполный состав до подписания.</strong></div></article>
-        <article class="case-card"><img src="assets/img/resource-meeting.png" alt=""><div><h2>Подрядчик хочет идти головным, но не тянет сделку</h2><p>Есть монтажники, но нет поставки, ПНР и финансового плеча.</p><strong>Что даёт разбор: рекомендация идти не головным, а через монтажный блок.</strong></div></article>
-        <article class="case-card"><img src="assets/img/supplier-roles.png" alt=""><div><h2>Поставщик получил объект, но не имеет монтажников в регионе</h2><p>Поставка есть, исполнение не закрыто.</p><strong>Что даёт разбор: список недостающих ролей и возможных исполнителей.</strong></div></article>
-        <article class="case-card"><img src="assets/img/matrix-dashboard.png" alt=""><div><h2>Закупка выглядит привлекательной, но опасна по срокам</h2><p>Сроки поставки, монтажа и приёмки не совпадают с реальностью.</p><strong>Что даёт разбор: клиент меняет условия или не входит в убыточную историю.</strong></div></article>
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Типовые ситуации</p><h2>Где разбор нужен до решения</h2></div>
+        <div class="service-table-wrap">
+          <table class="service-table">
+            <thead><tr><th>Ситуация</th><th>Проблема</th><th>Что проверяет TenderCheck</th><th>Что получает клиент</th></tr></thead>
+            <tbody>
+              <tr><td>Неполное КП</td><td>не учтены скрытые работы</td><td>состав поставки, монтаж, ПНР, ИД</td><td>список недостающих блоков</td></tr>
+              <tr><td>Нереалистичные сроки</td><td>график не совпадает с поставкой и сдачей</td><td>сроки, зависимости, региональные ресурсы</td><td>условия безопасного входа</td></tr>
+              <tr><td>Неучтённая ИД</td><td>документация не заложена в цену</td><td>исполнительную документацию и сдачу</td><td>вопросы к стороне до подписания</td></tr>
+              <tr><td>Отсутствие ПНР</td><td>монтаж есть, рабочей системы может не быть</td><td>настройку, тестирование, ввод в эксплуатацию</td><td>красную зону в матрице</td></tr>
+              <tr><td>Нет поставки / отсрочки</td><td>финансовая модель не держится</td><td>поставщика, отсрочку, БГ, аванс</td><td>сценарий участия или отказа</td></tr>
+              <tr><td>Головная роль опасна</td><td>клиент берёт больше, чем может исполнить</td><td>ресурсы, роли и границы ответственности</td><td>вариант субподряда или сборки сделки</td></tr>
+              <tr><td>Субподряд безопаснее</td><td>часть работ можно взять без полной ответственности</td><td>какой блок закрыт силами клиента</td><td>безопасный периметр участия</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <section class="section muted" id="articles">
       <div class="container">
-        <div class="section-heading"><p class="eyebrow">Статьи</p><h2>Материалы для самостоятельной первичной проверки</h2></div>
+        <div class="section-heading"><p class="eyebrow">Статьи</p><h2>Материалы для первичной проверки</h2></div>
         <div class="feature-grid three">
-          <article class="feature-card"><h3>Как понять, что КП неполное</h3><p>Проверяйте границы работ, пусконаладку, кабельные трассы, шкафы, ИД, доставку, гарантию и условия приёмки.</p></article>
-          <article class="feature-card"><h3>Почему подрядчик уходит в минус</h3><p>Чаще всего из-за неполной сметы, неверных сроков, отсутствия отсрочки и недооценки документации.</p></article>
-          <article class="feature-card"><h3>Что такое ПНР и почему его забывают</h3><p>ПНР - это настройка, тестирование, проверка функций и сдача системы. Без него монтаж не превращается в рабочий объект.</p></article>
-          <article class="feature-card"><h3>Почему ИД ломает бюджет</h3><p>Исполнительная документация требует времени, дисциплины и компетенции. Если её нет в смете, она станет скрытым расходом.</p></article>
-          <article class="feature-card"><h3>Субподряд или головное участие</h3><p>Головная роль выгодна только при закрытых ресурсах. Если нет поставки, ПНР или финансов, безопаснее отдельный блок.</p></article>
-          <article class="feature-card"><h3>Что такое матрица закрытия сделки</h3><p>Это таблица, где по каждому блоку видно: закрыто, частично, риск, нет данных или не требуется.</p></article>
+          <article class="feature-card"><span class="card-index">01</span><h3>Как читать КП</h3><p>Проверяйте границы работ, доставку, гарантию, ПНР, ИД, сроки и условия приёмки.</p></article>
+          <article class="feature-card"><span class="card-index">02</span><h3>Что должно быть в смете</h3><p>Смета должна показывать не только оборудование, но и работы, расходники, документацию, настройку и сдачу.</p></article>
+          <article class="feature-card"><span class="card-index">03</span><h3>Почему ПНР нельзя забывать</h3><p>Без пусконаладки монтаж не превращается в рабочий объект, а ответственность остаётся спорной.</p></article>
+          <article class="feature-card"><span class="card-index">04</span><h3>Как проверить сроки</h3><p>Сверяйте поставку, монтаж, настройку, приёмку, доступ на объект и готовность смежных разделов.</p></article>
+          <article class="feature-card"><span class="card-index">05</span><h3>Что спросить до подписания</h3><p>Уточните границы ответственности, штрафы, исходные данные, допработы, сроки оплаты и порядок сдачи.</p></article>
+          <article class="feature-card"><span class="card-index">06</span><h3>Почему ИД - не формальность</h3><p>Исполнительная документация требует времени, дисциплины и компетенции. Если её нет в смете, это скрытый расход.</p></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="demo-report">
       <div class="container two-column">
-        <figure class="media-frame"><img src="assets/img/demo-report.png" alt="Демонстрационный инженерно-коммерческий отчёт"></figure>
-        <div>
-          <p class="eyebrow">Демо-отчёт</p>
-          <h2>Посмотрите пример результата до оплаты</h2>
-          <p class="section-copy">Настоящий PDF на вымышленном объекте: обложка, вводные, вывод, матрица 7 блоков, риски, скрытые работы, недостающие ресурсы, вопросы, roadmap, рекомендации и дисклеймер.</p>
-          <a class="button primary" href="assets/demo-report.pdf">Скачать demo-report.pdf</a>
-        </div>
+        <div class="service-table-wrap"><table class="service-table"><tbody><tr><td>Вводные</td><td>объект, документы, роль клиента</td></tr><tr><td>Матрица</td><td>7 блоков сделки</td></tr><tr><td>Риски</td><td>зелёные, жёлтые, красные и серые зоны</td></tr><tr><td>Roadmap</td><td>последовательность действий</td></tr></tbody></table></div>
+        <div><p class="eyebrow">Демо-отчёт</p><h2>Посмотрите пример результата до оплаты</h2><p class="section-copy">PDF на вымышленном объекте: обложка, вводные, вывод, матрица, риски, недостающие ресурсы, вопросы, roadmap, рекомендации и дисклеймер.</p><a class="button primary" href="assets/demo-report.pdf">Скачать demo-report.pdf</a></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>пример отчёта</small></span></a></div><nav><a href="index.html">Главная</a><a href="dashboard.html">Кабинет клиента</a><a href="admin.html">Админка оператора</a></nav></div></footer>
+  <footer class="site-footer portal-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="index.html"><img src="assets/img/logo-clean.png" alt=""><span><strong>TenderCheck</strong><small>база знаний</small></span></a></div><nav><a href="clients.html">Клиентам</a><a href="report.html">Пример отчёта</a><a href="legal.html">Документы</a></nav><nav><a href="dashboard.html">Кабинет клиента</a><a href="admin.html">Админка оператора</a><a href="contacts.html">Контакты</a></nav></div></footer>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
