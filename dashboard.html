@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кабинет клиента - TenderCheck</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="app-body">
+  <aside class="app-sidebar">
+    <a class="brand app-brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>кабинет клиента</small></span></a>
+    <nav class="app-nav" data-tab-nav>
+      <a class="active" href="#overview" data-tab-link>Обзор</a>
+      <a href="#new-application" data-tab-link>Новая заявка</a>
+      <a href="#applications" data-tab-link>Мои заявки</a>
+      <a href="#reports" data-tab-link>Отчёты</a>
+      <a href="#billing" data-tab-link>Тариф и оплаты</a>
+      <a href="#profile" data-tab-link>Профиль компании</a>
+      <a href="#support" data-tab-link>Поддержка</a>
+      <a href="index.html">Выход</a>
+    </nav>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-topbar">
+      <div><p class="eyebrow">Клиент</p><h1>ООО Альфа Инжиниринг</h1></div>
+      <a class="button primary" href="#new-application">Новая заявка</a>
+    </header>
+
+    <section class="app-section active" id="overview" data-tab-panel>
+      <div class="metric-grid">
+        <article><span>Активные заявки</span><strong>3</strong><small>1 требует уточнений</small></article>
+        <article><span>Отчёты готовы</span><strong>2</strong><small>1 опубликован сегодня</small></article>
+        <article><span>Остаток по тарифу</span><strong>2</strong><small>до 30.07.2026</small></article>
+        <article><span>Последний счёт</span><strong>35k</strong><small>ожидает оплаты</small></article>
+      </div>
+      <div class="app-grid">
+        <article class="app-panel large">
+          <h2>Последние заявки</h2>
+          <table class="matrix-table">
+            <thead><tr><th>№</th><th>Название</th><th>Тип</th><th>Дата</th><th>Статус</th><th>Тариф</th><th>Действие</th></tr></thead>
+            <tbody>
+              <tr><td>TC-1042</td><td>СКУД складской комплекс</td><td>КП / смета</td><td>17.06.2026</td><td><span class="status yellow">в работе</span></td><td>Полный</td><td><a href="#application-card">Открыть</a></td></tr>
+              <tr><td>TC-1038</td><td>ПНР видеонаблюдения</td><td>ТЗ</td><td>14.06.2026</td><td><span class="status red">нужны уточнения</span></td><td>Разбор КП</td><td><a href="#application-card">Открыть</a></td></tr>
+              <tr><td>TC-1027</td><td>ОПС бизнес-центр</td><td>Закупка</td><td>10.06.2026</td><td><span class="status green">отчёт готов</span></td><td>Экспресс</td><td><a href="assets/demo-report.pdf">PDF</a></td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article class="app-panel"><h2>Последние комментарии</h2><div class="comment-feed"><p><b>Оператор:</b> Нужны условия отсрочки по оборудованию.</p><p><b>Система:</b> Отчёт TC-1027 опубликован.</p></div></article>
+      </div>
+    </section>
+
+    <section class="app-section" id="new-application" data-tab-panel>
+      <article class="app-panel">
+        <h2>Мастер новой заявки</h2>
+        <form class="wizard-form" data-api-form data-endpoint="/api/applications" data-success="Заявка отправлена. Черновик удалён, статус созданной заявки: ожидает оплаты.">
+          <div class="wizard-step"><span>1</span><h3>Тип задачи</h3><div class="pill-grid"><label><input type="radio" name="task_type" required value="Проверка КП"> Проверка КП</label><label><input type="radio" name="task_type" value="Проверка ТЗ"> Проверка ТЗ</label><label><input type="radio" name="task_type" value="Проверка сметы"> Проверка сметы</label><label><input type="radio" name="task_type" value="Разбор закупки"> Разбор закупки</label><label><input type="radio" name="task_type" value="Оценка объекта"> Оценка объекта</label><label><input type="radio" name="task_type" value="Подготовка к подписанию"> Подготовка к подписанию</label><label><input type="radio" name="task_type" value="Подбор ресурсов"> Подбор недостающих ресурсов</label><label><input type="radio" name="task_type" value="Сборка сделки"> Запрос на сборку сделки</label></div></div>
+          <div class="wizard-step"><span>2</span><h3>Кто вы</h3><div class="pill-grid"><label><input type="radio" name="client_role" required value="Заказчик"> Заказчик</label><label><input type="radio" name="client_role" value="Подрядчик"> Подрядчик</label><label><input type="radio" name="client_role" value="Поставщик"> Поставщик</label><label><input type="radio" name="client_role" value="Монтажная организация"> Монтажная организация</label><label><input type="radio" name="client_role" value="Генподрядчик"> Генподрядчик</label><label><input type="radio" name="client_role" value="Другое"> Другое</label></div></div>
+          <div class="wizard-step"><span>3</span><h3>Данные сделки</h3><div class="form-grid"><label>Название объекта<input name="title" required></label><label>Регион<input name="region" required></label><label>Сумма<input name="budget" placeholder="12 000 000 ₽"></label><label>Срок исполнения<input name="deadline" placeholder="30.08.2026"></label><label>Краткое описание<textarea name="description" rows="4" required></textarea></label><label>Что хотите получить<textarea name="goal" rows="4"></textarea></label></div><fieldset class="checkbox-group"><legend>Что уже есть</legend><label><input type="checkbox" name="resources" value="supply"> поставка</label><label><input type="checkbox" name="resources" value="installation"> монтаж</label><label><input type="checkbox" name="resources" value="commissioning"> ПНР</label><label><input type="checkbox" name="resources" value="docs"> ИД</label><label><input type="checkbox" name="resources" value="design"> проект</label><label><input type="checkbox" name="resources" value="finance"> финансы</label></fieldset></div>
+          <div class="wizard-step"><span>4</span><h3>Файлы</h3><label class="file-input dropzone"><input type="file" name="files" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip"><span>Перетащите файлы или выберите вручную</span><small data-file-label>PDF, DOCX, XLSX, JPG, PNG, ZIP до 50 МБ на файл</small></label></div>
+          <button class="button secondary" type="button" data-save-draft>Сохранить черновик</button>
+          <button class="button primary" type="submit">Отправить заявку</button>
+          <p class="form-result" data-form-result></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="app-section" id="applications" data-tab-panel>
+      <article class="app-panel">
+        <h2>Мои заявки</h2>
+        <div class="filter-row" data-status-filters><button class="active" data-filter="all">Все</button><button data-filter="черновик">Черновик</button><button data-filter="ожидает оплаты">Ожидает оплаты</button><button data-filter="принята">Принята</button><button data-filter="нужны уточнения">Нужны уточнения</button><button data-filter="в работе">В работе</button><button data-filter="отчёт готов">Отчёт готов</button><button data-filter="завершена">Завершена</button><button data-filter="отказ">Отказ</button></div>
+        <table class="matrix-table data-table">
+          <thead><tr><th>№</th><th>Название</th><th>Тип</th><th>Дата</th><th>Статус</th><th>Тариф</th><th>Действие</th></tr></thead>
+          <tbody>
+            <tr data-status="в работе"><td>TC-1042</td><td>СКУД складской комплекс</td><td>КП</td><td>17.06.2026</td><td><span class="status yellow">в работе</span></td><td>Полный</td><td><a href="#application-card">Открыть</a></td></tr>
+            <tr data-status="нужны уточнения"><td>TC-1038</td><td>ПНР видеонаблюдения</td><td>ТЗ</td><td>14.06.2026</td><td><span class="status red">нужны уточнения</span></td><td>Разбор КП</td><td><a href="#application-card">Открыть</a></td></tr>
+            <tr data-status="отчёт готов"><td>TC-1027</td><td>ОПС бизнес-центр</td><td>Закупка</td><td>10.06.2026</td><td><span class="status green">отчёт готов</span></td><td>Экспресс</td><td><a href="assets/demo-report.pdf">Скачать</a></td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="app-section" id="application-card" data-tab-panel>
+      <div class="app-grid">
+        <article class="app-panel large">
+          <h2>Карточка заявки TC-1042</h2>
+          <div class="detail-grid"><p><b>Тип:</b> КП / смета</p><p><b>Регион:</b> Свердловская область</p><p><b>Сумма:</b> 12 400 000 ₽</p><p><b>Срок:</b> 30.08.2026</p><p><b>Статус:</b> в работе</p><p><b>Оператор:</b> И. Орлов</p><p><b>Создана:</b> 17.06.2026</p><p><b>Срок выполнения:</b> 20.06.2026</p></div>
+          <h3>Матрица сделки</h3>
+          <table class="matrix-table"><tbody><tr><td>Поставка</td><td><span class="status yellow">частично</span></td><td>нет отсрочки</td></tr><tr><td>Монтаж</td><td><span class="status green">закрыто</span></td><td>собственная бригада</td></tr><tr><td>ПНР</td><td><span class="status red">риск</span></td><td>нет инженера</td></tr><tr><td>ИД</td><td><span class="status red">риск</span></td><td>не учтена</td></tr><tr><td>Проектирование</td><td><span class="status yellow">частично</span></td><td>нужна РД</td></tr><tr><td>Финансы</td><td><span class="status red">риск</span></td><td>нет БГ</td></tr><tr><td>Договорные риски</td><td><span class="status yellow">внимание</span></td><td>штрафы</td></tr></tbody></table>
+          <h3>Вывод</h3><p class="note-box">Можно входить при условиях: закрыть ПНР, ИД и финансовое обеспечение до подписания договора.</p>
+          <h3>Roadmap</h3><ol class="roadmap"><li>Запросить финальные сроки поставки.</li><li>Вынести ИД отдельной строкой в смету.</li><li>Подтвердить инженера ПНР в регионе.</li><li>Согласовать БГ или отсрочку.</li></ol>
+        </article>
+        <article class="app-panel">
+          <h2>Файлы</h2><ul class="file-list"><li>КП_СКУД.pdf <a href="#">скачать</a></li><li>Смета.xlsx <a href="#">скачать</a></li></ul><label class="file-input"><input type="file" multiple><span>Дозагрузить файлы</span><small data-file-label>PDF, XLSX, ZIP</small></label>
+          <h2>Комментарии</h2><div class="comment-feed"><p><b>Клиент:</b> Нужно понять, идти ли головным.</p><p><b>Оператор:</b> Добавьте условия оплаты от заказчика.</p><p><b>Система:</b> Матрица обновлена.</p></div><form data-api-form data-endpoint="/api/comments" data-success="Комментарий отправлен."><textarea name="text" rows="3" required placeholder="Комментарий оператору"></textarea><button class="button secondary" type="submit">Отправить</button><p class="form-result" data-form-result></p></form>
+          <h2>Рекомендуемые контакты</h2><p class="disclaimer">Контакты предоставлены как информационная рекомендация. TenderCheck не является стороной договоров между клиентом и рекомендованными компаниями, если иное не оформлено отдельным соглашением.</p>
+          <h2>Отчёты</h2><a class="button primary" href="assets/demo-report.pdf">Скачать PDF</a><a class="button secondary" href="#">Скачать приложения</a><button class="button secondary" type="button" data-modal-open="deal-build">Запросить сборку сделки</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="app-section" id="reports" data-tab-panel><article class="app-panel"><h2>Отчёты</h2><table class="matrix-table"><thead><tr><th>Дата</th><th>Заявка</th><th>Тип</th><th>Формат</th><th>Скачать</th></tr></thead><tbody><tr><td>17.06.2026</td><td>TC-1042</td><td>Матрица</td><td>PDF</td><td><a href="assets/demo-report.pdf">PDF</a></td></tr><tr><td>10.06.2026</td><td>TC-1027</td><td>Экспресс</td><td>PDF</td><td><a href="assets/demo-report.pdf">PDF</a></td></tr></tbody></table></article></section>
+
+    <section class="app-section" id="billing" data-tab-panel><div class="app-grid"><article class="app-panel"><h2>Тариф и баланс</h2><div class="detail-grid"><p><b>Тариф:</b> Технический логист</p><p><b>Лимит:</b> 5 заявок</p><p><b>Использовано:</b> 3</p><p><b>Осталось:</b> 2</p><p><b>Срок действия:</b> до 30.07.2026</p></div><button class="button primary">Докупить заявку</button></article><article class="app-panel"><h2>Счета и акты</h2><table class="matrix-table"><tbody><tr><td>Счёт 24-061</td><td><span class="status yellow">ожидает оплаты</span></td><td>35 000 ₽</td></tr><tr><td>Акт 24-053</td><td><span class="status green">закрыт</span></td><td>60 000 ₽</td></tr></tbody></table></article></div></section>
+
+    <section class="app-section" id="profile" data-tab-panel><article class="app-panel"><h2>Профиль компании</h2><form class="upload-form" data-api-form data-endpoint="/api/company" data-success="Профиль компании сохранён."><div class="form-grid"><label>Название<input name="name" value="ООО Альфа Инжиниринг"></label><label>ИНН<input name="inn" value="7700000000"></label><label>ОГРН<input name="ogrn"></label><label>Юрадрес<input name="legal_address"></label><label>Фактический адрес<input name="actual_address"></label><label>Контактное лицо<input name="contact_person"></label><label>Телефон<input name="phone"></label><label>Email<input name="email"></label><label>Регион<input name="region"></label><label>НДС<select name="vat"><option>Да</option><option>Нет</option></select></label><label>Сфера деятельности<textarea name="business_scope" rows="3"></textarea></label><label>Свои ресурсы<textarea name="resources" rows="3"></textarea></label></div><button class="button primary" type="submit">Сохранить</button><p class="form-result" data-form-result></p></form></article></section>
+
+    <section class="app-section" id="support" data-tab-panel><article class="app-panel"><h2>Поддержка</h2><p>Пишите оператору по заявке или создайте обращение в поддержку.</p><form data-api-form data-endpoint="/api/support" data-success="Обращение отправлено."><textarea name="message" rows="5" required placeholder="Опишите вопрос"></textarea><button class="button primary" type="submit">Отправить</button><p class="form-result" data-form-result></p></form></article></section>
+  </main>
+
+  <div class="modal" data-modal="deal-build" hidden><div class="modal-dialog"><button class="modal-close" data-modal-close>&times;</button><h2>Запросить сборку сделки</h2><p>Оператор создаст отдельную услугу и уточнит роли, бюджет и ответственность сторон.</p><button class="button primary" data-modal-close>Понятно</button></div></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

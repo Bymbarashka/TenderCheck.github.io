@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Админка оператора - TenderCheck</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="app-body">
+  <aside class="app-sidebar">
+    <a class="brand app-brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>оператор</small></span></a>
+    <nav class="app-nav" data-tab-nav>
+      <a class="active" href="#admin-dashboard" data-tab-link>Дашборд</a>
+      <a href="#all-applications" data-tab-link>Все заявки</a>
+      <a href="#clients" data-tab-link>Клиенты</a>
+      <a href="#operator-card" data-tab-link>Карточка заявки</a>
+      <a href="#supplier-registry" data-tab-link>Реестр поставщиков</a>
+      <a href="#supplier-requests" data-tab-link>Заявки поставщиков</a>
+      <a href="#admin-reports" data-tab-link>Отчёты</a>
+      <a href="#tariffs" data-tab-link>Тарифы</a>
+      <a href="#payments" data-tab-link>Платежи</a>
+      <a href="#users" data-tab-link>Пользователи</a>
+      <a href="#settings" data-tab-link>Настройки</a>
+      <a href="#audit" data-tab-link>Журнал действий</a>
+      <a href="#integrations" data-tab-link>Интеграции</a>
+    </nav>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-topbar"><div><p class="eyebrow">Админка</p><h1>Рабочее место оператора</h1></div><a class="button secondary" href="dashboard.html">Кабинет клиента</a></header>
+
+    <section class="app-section active" id="admin-dashboard" data-tab-panel>
+      <div class="metric-grid">
+        <article><span>Новые заявки</span><strong>7</strong><small>2 без тарифа</small></article>
+        <article><span>В работе</span><strong>12</strong><small>4 требуют уточнений</small></article>
+        <article><span>Ждут уточнений</span><strong>4</strong><small>нужен ответ клиента</small></article>
+        <article><span>Отчётов готово</span><strong>5</strong><small>2 не опубликованы</small></article>
+        <article><span>Просрочено</span><strong>1</strong><small>контроль сегодня</small></article>
+        <article><span>Новых поставщиков</span><strong>9</strong><small>на проверку</small></article>
+      </div>
+    </section>
+
+    <section class="app-section" id="all-applications" data-tab-panel>
+      <article class="app-panel">
+        <h2>Все заявки</h2>
+        <div class="filter-row"><input placeholder="Клиент"><select><option>Все статусы</option><option>Новая</option><option>В работе</option><option>Отчёт готов</option></select><select><option>Все операторы</option><option>И. Орлов</option><option>М. Волкова</option></select><input placeholder="Регион"><button class="button secondary">Фильтр</button></div>
+        <table class="matrix-table"><thead><tr><th>Компания</th><th>Тип</th><th>Статус</th><th>Оператор</th><th>Дата</th><th>Срок</th><th>Действие</th></tr></thead><tbody><tr><td>Альфа Инжиниринг</td><td>КП / смета</td><td><span class="status yellow">в работе</span></td><td>И. Орлов</td><td>17.06.2026</td><td>20.06.2026</td><td><a href="#operator-card">Открыть</a></td></tr><tr><td>Север Связь</td><td>ТЗ</td><td><span class="status red">нужны уточнения</span></td><td>М. Волкова</td><td>16.06.2026</td><td>19.06.2026</td><td><a href="#operator-card">Открыть</a></td></tr></tbody></table>
+      </article>
+    </section>
+
+    <section class="app-section" id="operator-card" data-tab-panel>
+      <div class="app-grid">
+        <article class="app-panel large">
+          <h2>Карточка заявки оператора</h2>
+          <div class="detail-grid"><p><b>Клиент:</b> ООО Альфа Инжиниринг</p><p><b>ИНН:</b> 7700000000</p><p><b>Тариф:</b> Полный конструктор</p><p><b>Оплата:</b> ожидает оплаты</p><p><b>Статус:</b> в работе</p><p><b>Оператор:</b> И. Орлов</p></div>
+          <div class="toolbar"><button class="button secondary">Принята</button><button class="button secondary">Нужны уточнения</button><button class="button secondary">Отчёт готов</button><button class="button secondary">Завершена</button></div>
+          <h3>Редактор матрицы</h3>
+          <table class="matrix-table editable-table"><thead><tr><th>Блок</th><th>Статус</th><th>Комментарий</th><th>Рекомендация</th><th>Клиенту</th></tr></thead><tbody>
+            <tr><td>Поставка</td><td><select><option>частично</option><option>закрыто</option><option>риск</option><option>нет данных</option></select></td><td><input value="нет отсрочки"></td><td><input value="запросить условия"></td><td><input type="checkbox" checked></td></tr>
+            <tr><td>Монтаж</td><td><select><option>закрыто</option><option>частично</option><option>риск</option></select></td><td><input value="собственная бригада"></td><td><input value="проверить график"></td><td><input type="checkbox" checked></td></tr>
+            <tr><td>ПНР</td><td><select><option>риск</option><option>частично</option><option>закрыто</option></select></td><td><input value="нет инженера"></td><td><input value="подобрать ПНР"></td><td><input type="checkbox" checked></td></tr>
+            <tr><td>ИД</td><td><select><option>риск</option><option>частично</option><option>закрыто</option></select></td><td><input value="не учтена"></td><td><input value="добавить в смету"></td><td><input type="checkbox" checked></td></tr>
+            <tr><td>Проектирование</td><td><select><option>частично</option><option>риск</option><option>закрыто</option></select></td><td><input value="нет РД"></td><td><input value="оценить проектировщика"></td><td><input type="checkbox"></td></tr>
+            <tr><td>Финансы</td><td><select><option>риск</option><option>частично</option><option>закрыто</option></select></td><td><input value="нет БГ"></td><td><input value="запросить обеспечение"></td><td><input type="checkbox" checked></td></tr>
+            <tr><td>Договорные риски</td><td><select><option>внимание</option><option>риск</option><option>закрыто</option></select></td><td><input value="штрафы"></td><td><input value="согласовать сроки"></td><td><input type="checkbox" checked></td></tr>
+          </tbody></table>
+        </article>
+        <article class="app-panel">
+          <h2>Документы</h2><ul class="file-list"><li>КП.pdf</li><li>Смета.xlsx</li><li>ТЗ.docx</li></ul>
+          <h2>Внутренние заметки</h2><textarea rows="4" placeholder="Не видно клиенту"></textarea>
+          <h2>Roadmap</h2><form data-api-form data-endpoint="/api/operator/roadmap" data-success="Roadmap сохранён."><input name="title" placeholder="Шаг"><textarea name="description" placeholder="Описание"></textarea><select name="priority"><option>Высокий</option><option>Средний</option><option>Низкий</option></select><input name="due_note" placeholder="Срок"><label class="consent"><input type="checkbox" checked> Показывать клиенту</label><button class="button secondary" type="submit">Добавить</button><p class="form-result" data-form-result></p></form>
+          <h2>Рекомендации</h2><form data-api-form data-endpoint="/api/operator/recommendations" data-success="Поставщик привязан к заявке."><input name="role" placeholder="Роль"><select name="supplier"><option>УралПНР</option><option>ТехПоставка</option></select><textarea name="comment" placeholder="Комментарий"></textarea><label class="consent"><input type="checkbox"> Показывать клиенту</label><button class="button secondary" type="submit">Привязать</button><p class="form-result" data-form-result></p></form>
+        </article>
+      </div>
+    </section>
+
+    <section class="app-section" id="clients" data-tab-panel><article class="app-panel"><h2>Клиенты</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>ИНН</th><th>Заявки</th><th>Тариф</th><th>Контакт</th></tr></thead><tbody><tr><td>Альфа Инжиниринг</td><td>7700000000</td><td>3</td><td>Логист</td><td>Иван Петров</td></tr></tbody></table></article></section>
+
+    <section class="app-section" id="supplier-registry" data-tab-panel><article class="app-panel"><h2>Реестр поставщиков</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>Категория</th><th>Регион</th><th>НДС</th><th>Отсрочка</th><th>Рейтинг</th><th>Статус</th></tr></thead><tbody><tr><td>УралПНР</td><td>ПНР</td><td>Урал</td><td>Да</td><td>по проекту</td><td>4.7</td><td><span class="status green">проверен</span></td></tr><tr><td>ТехПоставка</td><td>Поставка</td><td>РФ</td><td>Да</td><td>30 дней</td><td>4.4</td><td><span class="status yellow">на проверке</span></td></tr></tbody></table><h3>Карточка поставщика</h3><div class="detail-grid"><p>ИНН, ОГРН, контакт, телефон, email, сайт, регионы, категории, НДС, отсрочка, минимальный бюджет, срок реакции, опыт, заметки, рейтинг и статус.</p></div></article></section>
+
+    <section class="app-section" id="supplier-requests" data-tab-panel><article class="app-panel"><h2>Заявки поставщиков</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>Категория</th><th>Дата</th><th>Статус</th><th>Действие</th></tr></thead><tbody><tr><td>ИнжСервис</td><td>ИД</td><td>17.06.2026</td><td><span class="status yellow">новая</span></td><td><button class="button secondary">Принять в реестр</button></td></tr></tbody></table></article></section>
+
+    <section class="app-section" id="admin-reports" data-tab-panel><article class="app-panel"><h2>Отчёты</h2><form class="upload-form" data-api-form data-endpoint="/api/operator/reports" data-success="Отчёт загружен и готов к публикации."><label>Заявка<select><option>TC-1042</option></select></label><label class="file-input"><input type="file" name="pdf" accept=".pdf"><span>Загрузить PDF</span><small data-file-label>PDF</small></label><label class="file-input"><input type="file" name="docx" accept=".docx"><span>Загрузить DOCX</span><small data-file-label>если доступно</small></label><label class="file-input"><input type="file" name="attachments" multiple><span>Приложения</span><small data-file-label>любые файлы</small></label><button class="button primary">Опубликовать клиенту</button><button class="button secondary" type="button">Скрыть отчёт</button><p class="form-result" data-form-result></p></form></article></section>
+
+    <section class="app-section" id="tariffs" data-tab-panel><article class="app-panel"><h2>Тарифы</h2><table class="matrix-table"><tbody><tr><td>Экспресс</td><td>15 000 ₽</td><td>активен</td></tr><tr><td>Полный конструктор</td><td>60 000 ₽</td><td>активен</td></tr><tr><td>Технический логист</td><td>150 000 ₽ / месяц</td><td>активен</td></tr></tbody></table></article></section>
+
+    <section class="app-section" id="payments" data-tab-panel><article class="app-panel"><h2>Платежи</h2><form class="filter-row" data-api-form data-endpoint="/api/operator/payments" data-success="Счёт создан."><input placeholder="Компания"><input placeholder="Сумма"><select><option>ожидает оплаты</option><option>оплачен</option><option>отменён</option><option>возврат</option><option>просрочен</option></select><button class="button primary">Создать счёт</button><p class="form-result" data-form-result></p></form><table class="matrix-table"><tbody><tr><td>Счёт 24-061</td><td>Альфа Инжиниринг</td><td><span class="status yellow">ожидает оплаты</span></td><td>35 000 ₽</td></tr></tbody></table></article></section>
+
+    <section class="app-section" id="users" data-tab-panel><article class="app-panel"><h2>Пользователи</h2><table class="matrix-table"><thead><tr><th>Email</th><th>ФИО</th><th>Роль</th><th>Активен</th></tr></thead><tbody><tr><td>client@example.ru</td><td>Иван Петров</td><td>клиент</td><td>да</td></tr><tr><td>operator@example.ru</td><td>И. Орлов</td><td>оператор</td><td>да</td></tr></tbody></table></article></section>
+
+    <section class="app-section" id="settings" data-tab-panel><article class="app-panel"><h2>Настройки</h2><ul class="dash-list"><li>SMTP и уведомления</li><li>лимиты файлов</li><li>статусы заявок</li><li>шаблоны писем</li><li>параметры Bitrix24</li></ul></article></section>
+
+    <section class="app-section" id="audit" data-tab-panel><article class="app-panel"><h2>Журнал действий</h2><table class="matrix-table"><thead><tr><th>Дата</th><th>Пользователь</th><th>Действие</th><th>Объект</th><th>IP</th></tr></thead><tbody><tr><td>17.06.2026 11:42</td><td>operator@example.ru</td><td>изменение матрицы</td><td>TC-1042</td><td>10.0.0.4</td></tr><tr><td>17.06.2026 11:58</td><td>operator@example.ru</td><td>публикация отчёта</td><td>TC-1027</td><td>10.0.0.4</td></tr></tbody></table></article></section>
+
+    <section class="app-section" id="integrations" data-tab-panel>
+      <div class="app-grid">
+        <article class="app-panel large">
+          <h2>Интеграции</h2>
+          <table class="matrix-table">
+            <thead><tr><th>Интеграция</th><th>Что синхронизирует</th><th>Статус</th></tr></thead>
+            <tbody>
+              <tr><td>Bitrix24</td><td>компания, контакт, сделка, задача</td><td><span class="status yellow">запланировано</span></td></tr>
+              <tr><td>Email</td><td>уведомления клиенту и оператору</td><td><span class="status yellow">запланировано</span></td></tr>
+              <tr><td>Telegram</td><td>операторские уведомления</td><td><span class="status yellow">запланировано</span></td></tr>
+            </tbody>
+          </table>
+          <h3>Логи интеграции</h3>
+          <table class="matrix-table">
+            <thead><tr><th>Дата</th><th>Провайдер</th><th>Объект</th><th>Направление</th><th>Статус</th></tr></thead>
+            <tbody><tr><td>17.06.2026</td><td>Bitrix24</td><td>TC-1042</td><td>out</td><td>queued</td></tr></tbody>
+          </table>
+        </article>
+        <article class="app-panel">
+          <h2>Поля Bitrix24</h2>
+          <form class="upload-form" data-api-form data-endpoint="/api/admin/integrations/bitrix/sync" data-success="Синхронизация поставлена в очередь.">
+            <label>bitrix_company_id<input name="bitrix_company_id" placeholder="123"></label>
+            <label>bitrix_contact_id<input name="bitrix_contact_id" placeholder="456"></label>
+            <label>bitrix_deal_id<input name="bitrix_deal_id" placeholder="789"></label>
+            <label>bitrix_task_id<input name="bitrix_task_id" placeholder="321"></label>
+            <button class="button primary" type="submit">Синхронизировать</button>
+            <p class="form-result" data-form-result></p>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

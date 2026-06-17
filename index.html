@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TenderCheck - сервис технической проверки сделок</title>
+  <meta name="description" content="TenderCheck проверяет КП, ТЗ, сметы, закупки и сделки до входа: скрытые расходы, незакрытые ресурсы, технические риски и сценарии входа.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="portal-body">
+  <header class="portal-header">
+    <div class="service-bar">
+      <div class="container service-bar-inner">
+        <span>Оператор: ООО "Геоинформационные системы"</span>
+        <a href="mailto:gdd@icsis.ru">gdd@icsis.ru</a>
+        <a href="contacts.html">Телефон / Telegram</a>
+        <span>Пн-Пт, 10:00-18:00</span>
+        <a href="legal.html">Документы</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+    <div class="site-header">
+      <a class="brand" href="index.html" aria-label="TenderCheck">
+        <img src="assets/img/logo.png" alt="">
+        <span><strong>TenderCheck</strong><small>сервис технической проверки сделок</small></span>
+      </a>
+      <a class="mobile-quick-cta" href="#upload">Заявка</a>
+      <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="clients.html">Клиентам</a>
+        <a href="suppliers.html">Поставщикам</a>
+        <a href="#regulation">Как работает</a>
+        <a href="report.html">Пример отчёта</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="knowledge.html">База знаний</a>
+        <a href="legal.html">Документы</a>
+        <a href="about.html">О сервисе</a>
+        <a href="login.html">Войти</a>
+        <a class="nav-cta" href="#upload">Создать заявку</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="portal-hero">
+      <div class="container portal-hero-grid">
+        <div class="portal-hero-copy">
+          <p class="eyebrow">Сервисный B2B-портал</p>
+          <h1>Проверка КП, ТЗ, смет и закупок перед входом в сделку</h1>
+          <p class="lead">Разбираем техническую и коммерческую исполнимость: поставка, монтаж, ПНР, исполнительная документация, проектирование, финансы и договорные риски.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#upload">Создать заявку</a>
+            <a class="button secondary" href="assets/demo-report.pdf">Скачать пример отчёта</a>
+            <a class="button secondary" href="suppliers.html#supplier-form">Подать заявку в реестр</a>
+          </div>
+          <div class="service-marks">
+            <span>Экспресс-разбор - от 1 рабочего дня</span>
+            <span>Полный разбор - обычно 2-3 рабочих дня</span>
+            <span>Результат - в личном кабинете</span>
+            <span>Отвечаем за качество анализа, а не за исполнение третьих лиц</span>
+          </div>
+        </div>
+        <aside class="summary-panel" aria-label="Сводка разбора">
+          <div class="summary-head">
+            <span>Сводка разбора</span>
+            <strong>TC-1042</strong>
+          </div>
+          <div class="summary-metrics">
+            <div><span>Готовность</span><strong>56%</strong></div>
+            <div><span>Риски</span><strong>3 красных</strong></div>
+            <div><span>Срок</span><strong>2 дня</strong></div>
+            <div><span>Отчёт</span><strong>PDF</strong></div>
+          </div>
+          <table class="service-table compact-table">
+            <tbody>
+              <tr><td>Поставка</td><td><span class="status yellow">частично</span></td></tr>
+              <tr><td>Монтаж</td><td><span class="status green">закрыто</span></td></tr>
+              <tr><td>ПНР</td><td><span class="status red">риск</span></td></tr>
+              <tr><td>ИД</td><td><span class="status red">риск</span></td></tr>
+              <tr><td>Финансы</td><td><span class="status red">риск</span></td></tr>
+            </tbody>
+          </table>
+          <a class="button secondary" href="assets/demo-report.pdf">Открыть PDF</a>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="direction-strip" aria-label="Быстрые направления">
+      <div class="container direction-strip-inner">
+        <a href="#upload">Проверка КП</a>
+        <a href="#upload">Проверка ТЗ</a>
+        <a href="#upload">Проверка сметы</a>
+        <a href="#upload">Разбор закупки</a>
+        <a href="#upload">Подготовка к подписанию</a>
+        <a href="#upload">Подбор ресурсов</a>
+        <a href="#pricing">Сборка сделки</a>
+        <a href="suppliers.html">Закрытый реестр</a>
+      </div>
+    </nav>
+
+    <section class="section" id="scope">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Границы сервиса</p><h2>Что мы делаем - и чего не делаем</h2></div>
+        <div class="service-table-wrap">
+          <table class="service-table two-side-table">
+            <thead><tr><th>Делаем</th><th>Не делаем</th></tr></thead>
+            <tbody>
+              <tr><td>Проверяем КП, ТЗ, сметы и закупки.</td><td>Не ищем конкурсы за клиента.</td></tr>
+              <tr><td>Ищем скрытые работы, расходы и спорные зоны.</td><td>Не подаём заявки на ЭТП.</td></tr>
+              <tr><td>Оцениваем ресурсы клиента и исполнимость сделки.</td><td>Не гарантируем победу.</td></tr>
+              <tr><td>Строим матрицу закрытия сделки.</td><td>Не гарантируем оплату допработ.</td></tr>
+              <tr><td>Формируем Roadmap.</td><td>Не отвечаем за чужое исполнение без отдельного договора.</td></tr>
+              <tr><td>Показываем незакрытые роли и варианты закрытия слабых мест.</td><td>Не публикуем заявки в открытый доступ и не являемся маркетплейсом.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="audience">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Клиенты</p><h2>Для кого нужен разбор</h2></div>
+        <div class="service-list">
+          <article><h3>Подрядчикам и исполнителям</h3><p>Проверяем, не уйдёте ли вы в минус на объекте, закупке или субподряде.</p></article>
+          <article><h3>Поставщикам оборудования</h3><p>Проверяем, хватает ли вокруг поставки монтажа, ПНР, ИД и регионального исполнения.</p></article>
+          <article><h3>Заказчикам и генподрядчикам</h3><p>Проверяем КП подрядчика до оплаты и показываем, где появятся доплаты, сроки и спорные зоны.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cabinet">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">Кабинет</p>
+          <h2>Сервисный кабинет TenderCheck</h2>
+          <p class="section-copy">Все заявки, документы, комментарии, матрицы, отчёты и платежи хранятся в одном кабинете.</p>
+          <div class="portal-tile-grid">
+            <span>Новая заявка</span><span>Мои заявки</span><span>Загрузка документов</span><span>Матрица сделки</span><span>Roadmap</span><span>Комментарии специалиста</span><span>Отчёты PDF</span><span>Тариф и оплаты</span><span>Запрос сборки сделки</span><span>Профиль компании</span>
+          </div>
+        </div>
+        <div class="interface-preview">
+          <div class="preview-sidebar"><span>Обзор</span><span>Заявки</span><span>Отчёты</span><span>Оплаты</span></div>
+          <div class="preview-main">
+            <div class="preview-toolbar"><strong>Мои заявки</strong><button>Скачать отчёт</button></div>
+            <table class="service-table compact-table">
+              <tbody>
+                <tr><td>TC-1042</td><td>СКУД склад</td><td><span class="status yellow">в работе</span></td></tr>
+                <tr><td>TC-1038</td><td>ПНР</td><td><span class="status red">уточнения</span></td></tr>
+                <tr><td>TC-1027</td><td>ОПС</td><td><span class="status green">отчёт</span></td></tr>
+              </tbody>
+            </table>
+            <div class="mini-matrix-list">
+              <span class="green">Монтаж</span><span class="yellow">Поставка</span><span class="red">ПНР</span><span class="red">ИД</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="report-composition">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Отчёт</p><h2>Состав отчёта</h2></div>
+        <div class="service-table-wrap">
+          <table class="service-table">
+            <thead><tr><th>Раздел отчёта</th><th>Что внутри</th></tr></thead>
+            <tbody>
+              <tr><td>Вводные</td><td>объект, документы, роль клиента, исходные ограничения</td></tr>
+              <tr><td>Краткий вывод</td><td>идти / идти при условиях / субподряд / отказ</td></tr>
+              <tr><td>Матрица 7 блоков</td><td>поставка, монтаж, ПНР, ИД, проектирование, финансы, договорные риски</td></tr>
+              <tr><td>Карта рисков</td><td>зелёные, жёлтые, красные и серые зоны</td></tr>
+              <tr><td>Недостающие ресурсы</td><td>кого и чего не хватает</td></tr>
+              <tr><td>Вопросы к стороне</td><td>что уточнить до подписания</td></tr>
+              <tr><td>Roadmap</td><td>последовательность действий</td></tr>
+              <tr><td>Рекомендации</td><td>варианты закрытия слабых мест</td></tr>
+              <tr><td>Дисклеймер</td><td>границы ответственности отчёта</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="regulation">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Регламент</p><h2>Регламент обработки заявки</h2></div>
+        <ol class="regulation-list">
+          <li>Клиент создаёт заявку в кабинете.</li>
+          <li>Загружает КП, ТЗ, сметы, проект, фото или ссылку на закупку.</li>
+          <li>Оператор проверяет комплектность.</li>
+          <li>При необходимости задаёт уточняющие вопросы.</li>
+          <li>После оплаты заявка уходит в работу.</li>
+          <li>Формируется матрица 7 блоков.</li>
+          <li>Готовится отчёт.</li>
+          <li>Клиент получает PDF в личном кабинете.</li>
+          <li>При необходимости запрашивает сборку сделки.</li>
+        </ol>
+        <p class="note-box">Если документы неполные, срок разбора считается после получения необходимых уточнений.</p>
+      </div>
+    </section>
+
+    <section class="section muted" id="matrix">
+      <div class="container two-column matrix-section">
+        <div>
+          <p class="eyebrow">Матрица</p>
+          <h2>Матрица сделки</h2>
+          <p class="section-copy">Матрица не является гарантией исполнения. Она показывает состояние сделки на основании документов и данных, предоставленных клиентом.</p>
+          <div class="legend"><span><i class="dot green"></i>закрыто</span><span><i class="dot yellow"></i>частично</span><span><i class="dot red"></i>риск</span><span><i class="dot gray"></i>нет данных / не требуется</span></div>
+        </div>
+        <div class="service-table-wrap">
+          <table class="service-table mobile-card-table">
+            <thead><tr><th>Блок</th><th>Статус</th><th>Комментарий</th></tr></thead>
+            <tbody>
+              <tr><td>Поставка оборудования</td><td><span class="status yellow">частично</span></td><td>есть поставщик, нет отсрочки</td></tr>
+              <tr><td>Монтажные работы</td><td><span class="status green">закрыто</span></td><td>собственная бригада</td></tr>
+              <tr><td>ПНР</td><td><span class="status red">риск</span></td><td>нет инженера в регионе</td></tr>
+              <tr><td>Исполнительная документация</td><td><span class="status red">риск</span></td><td>не учтена в смете</td></tr>
+              <tr><td>Проектирование</td><td><span class="status yellow">частично</span></td><td>есть эскиз, нет РД</td></tr>
+              <tr><td>Финансовое обеспечение</td><td><span class="status red">риск</span></td><td>нет подтверждённой БГ</td></tr>
+              <tr><td>Договорные риски</td><td><span class="status yellow">внимание</span></td><td>жёсткие сроки и штрафы</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="prepare">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Комплект</p><h2>Что подготовить перед заявкой</h2></div>
+        <div class="portal-columns">
+          <ul class="dash-list">
+            <li>КП или смета;</li>
+            <li>ТЗ или описание работ;</li>
+            <li>проект / схемы / спецификация;</li>
+            <li>ссылка на закупку, если есть;</li>
+            <li>сроки исполнения;</li>
+          </ul>
+          <ul class="dash-list">
+            <li>регион объекта;</li>
+            <li>ваша роль в сделке;</li>
+            <li>что закрыто своими силами;</li>
+            <li>что вызывает сомнение;</li>
+            <li>ограничения по бюджету, отсрочке, БГ или авансу.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="scenarios">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Сценарии</p><h2>Прикладные сценарии разбора</h2></div>
+        <div class="service-table-wrap">
+          <table class="service-table">
+            <thead><tr><th>Сценарий</th><th>Когда применяется</th><th>Что проверяем</th><th>Результат</th></tr></thead>
+            <tbody>
+              <tr><td>Прямой контракт</td><td>клиент тянет основную роль</td><td>слабые места и договорные риски</td><td>условия безопасного входа</td></tr>
+              <tr><td>Не хватает ресурсов</td><td>нет бригады, ПНР, ИД или поставки</td><td>какие роли не закрыты</td><td>список недостающих ресурсов</td></tr>
+              <tr><td>Вход через субподряд</td><td>головная роль рискованна</td><td>какой блок можно взять</td><td>сценарий участия через отдельный блок</td></tr>
+              <tr><td>Сборка роли под контракт</td><td>ресурсы распределены между участниками</td><td>границы ответственности</td><td>карта ролей</td></tr>
+              <tr><td>Отказ от входа</td><td>сделка неисполняема или вне профиля</td><td>красные зоны</td><td>отрицательный вывод</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="documents">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Регламенты</p><h2>Документы и регламенты</h2></div>
+        <div class="portal-tile-grid docs-grid">
+          <a href="legal.html#offer">Публичная оферта</a>
+          <a href="legal.html#personal-data">Политика обработки ПДн</a>
+          <a href="legal.html#consent">Согласие на обработку ПДн</a>
+          <a href="legal.html#privacy">Конфиденциальность документов</a>
+          <a href="legal.html#registry">Условия реестра поставщиков</a>
+          <a href="legal.html#disclaimer">Дисклеймер экспертной оценки</a>
+          <a href="legal.html#requisites">Реквизиты оператора</a>
+          <a href="legal.html#refund">Условия возврата</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="pricing">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Тарифы</p><h2>Форматы работы</h2></div>
+        <div class="pricing-grid portal-pricing">
+          <article class="price-card"><h3>Экспресс-скрининг</h3><strong>от 15 000 ₽</strong><p><b>Входит:</b> 1 документ, 5-7 рисков, краткий вывод.</p><p><b>Не входит:</b> полная матрица, партнёры, звонки.</p><p><b>Срок:</b> от 1 рабочего дня.</p></article>
+          <article class="price-card"><h3>Разбор КП / сметы</h3><strong>от 35 000 ₽</strong><p><b>Входит:</b> состав работ, скрытые блоки, вопросы стороне.</p><p><b>Не входит:</b> сборка сделки и переговоры.</p><p><b>Срок:</b> 1-2 рабочих дня.</p></article>
+          <article class="price-card featured"><h3>Полный конструктор сделки</h3><strong>от 60 000 ₽</strong><p><b>Входит:</b> матрица 7 блоков, риски, roadmap, сценарий входа.</p><p><b>Не входит:</b> исполнение третьими лицами.</p><p><b>Срок:</b> обычно 2-3 рабочих дня.</p></article>
+          <article class="price-card"><h3>Технический логист</h3><strong>от 150 000 ₽ / месяц</strong><p><b>Входит:</b> до 5 заявок, приоритет, история в кабинете.</p><p><b>Не входит:</b> сборка сделки под ключ.</p><p><b>Лимиты:</b> по тарифному балансу.</p></article>
+          <article class="price-card"><h3>Сборка сделки</h3><strong>индивидуально, от 100 000 ₽</strong><p><b>Входит:</b> отдельная координация ролей и условий.</p><p><b>Не входит:</b> гарантия договора или оплаты.</p><p><b>Цена:</b> считается индивидуально.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="refusal">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Отказ</p><h2>Когда мы откажем в разборе или дадим отрицательный вывод</h2></div>
+        <ul class="refusal-grid">
+          <li>нет реальной точки входа;</li>
+          <li>нет минимальных ресурсов;</li>
+          <li>требуются серые схемы;</li>
+          <li>задача вне профиля;</li>
+          <li>исполнение держится только на надежде;</li>
+          <li>от нас ждут гарантии победы или чужого исполнения.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section upload-section portal-upload" id="upload">
+      <div class="container upload-layout">
+        <div>
+          <p class="eyebrow">Заявка</p>
+          <h2>Создать заявку на разбор</h2>
+          <p class="section-copy">Форма отправляется на backend-эндпоинт <code>/api/applications</code>. Файлы должны храниться в приватном контуре, доступ проверяется по роли, скачивания логируются.</p>
+          <p class="disclaimer">Отчёт является инженерно-коммерческой оценкой и не является гарантией победы, заключения договора или исполнения третьими лицами.</p>
+        </div>
+        <form class="upload-form" data-api-form data-endpoint="/api/applications" data-success="Заявка создана. Статус: ожидает оплаты или принята при активном тарифе.">
+          <div class="form-grid">
+            <label>ФИО<input type="text" name="full_name" required placeholder="Иван Петров"></label>
+            <label>Компания<input type="text" name="company" required placeholder="ООО Альфа Инжиниринг"></label>
+            <label>ИНН<input type="text" name="inn" required placeholder="7700000000"></label>
+            <label>Телефон<input type="tel" name="phone" required placeholder="+7 900 000-00-00"></label>
+            <label>Email<input type="email" name="email" required placeholder="mail@example.ru"></label>
+            <label>Тип задачи<select name="task_type" required><option>Проверка КП</option><option>Проверка ТЗ</option><option>Проверка сметы</option><option>Разбор закупки</option><option>Оценка объекта</option><option>Подготовка к подписанию</option><option>Подбор недостающих ресурсов</option><option>Запрос на сборку сделки</option></select></label>
+            <label>Регион<input type="text" name="region" required placeholder="Москва, Урал, Сибирь"></label>
+            <label>Комментарий<textarea name="description" rows="4" required placeholder="Кратко опишите задачу"></textarea></label>
+          </div>
+          <label class="file-input"><input type="file" name="files" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip"><span>Прикрепить файлы</span><small data-file-label>PDF, DOCX, XLSX, JPG, PNG, ZIP до 50 МБ</small></label>
+          <label class="consent"><input type="checkbox" name="personal_data_consent" required> Согласен на обработку персональных данных</label>
+          <label class="consent"><input type="checkbox" name="document_rights_confirmed" required> Подтверждаю право загружать документы</label>
+          <button class="button primary" type="submit">Отправить заявку</button>
+          <p class="form-result" data-form-result></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer portal-footer">
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>сервис технической проверки сделок</small></span></a><p>Документы опубликованы в рабочей редакции. Перед оплатой услуги клиент принимает актуальную редакцию оферты и согласий.</p></div>
+      <nav><a href="clients.html">Клиентам</a><a href="suppliers.html">Поставщикам</a><a href="report.html">Пример отчёта</a><a href="knowledge.html">База знаний</a></nav>
+      <nav><a href="legal.html">Документы</a><a href="about.html">О сервисе</a><a href="contacts.html">Контакты</a><a href="login.html">Вход</a></nav>
+    </div>
+  </footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Поставщикам и партнёрам - TenderCheck</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>закрытый реестр партнёров</small></span></a>
+    <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html#deliverables">Что получает клиент</a>
+      <a href="#roles">Кого ищем</a>
+      <a href="#registry-terms">Условия</a>
+      <a href="#faq">FAQ</a>
+      <a href="legal.html">Документы</a>
+      <a class="nav-cta" href="#supplier-form">В реестр</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-suppliers">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Поставщикам и партнёрам</p>
+        <h1>Закрытый реестр для задач, где клиенту не хватает ресурса</h1>
+        <p class="lead">Мы не раздаём заявки всем подряд. Рекомендуем партнёров только тогда, когда в разборе сделки есть конкретная слабая зона: поставка, монтаж, ПНР, проектирование, ИД, связь, СКУД, ОПС или сервис.</p>
+        <div class="hero-actions"><a class="button primary" href="#supplier-form">Подать заявку в реестр</a><a class="button secondary" href="#roles">Кого ищем</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">Принцип</p>
+          <h2>Включение в реестр не гарантирует заявки</h2>
+          <p class="section-copy">Реестр нужен, чтобы закрывать конкретные пробелы в сделках клиентов. Контакты передаются только при релевантной рекомендации и в рамках согласованных условий.</p>
+          <div class="note-box">Оператор может принять заявку, отправить на проверку, ограничить использование или отказать без включения в реестр.</div>
+        </div>
+        <figure class="media-frame"><img src="assets/img/supplier-meeting.png" alt="Поставщик обсуждает технические документы"></figure>
+      </div>
+    </section>
+
+    <section class="section muted" id="roles">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Роли</p><h2>Кто нужен в реестре</h2></div>
+        <figure class="wide-image"><img src="assets/img/supplier-roles.png" alt="Технические роли проекта"></figure>
+        <div class="feature-grid five">
+          <article class="feature-card"><h3>Поставщики</h3><p>Оборудование, материалы, отсрочки, региональные условия.</p></article>
+          <article class="feature-card"><h3>Монтажники</h3><p>Механика, электрика, слаботочные системы, площадки.</p></article>
+          <article class="feature-card"><h3>ПНР</h3><p>Настройка, тесты, функциональная проверка, сдача.</p></article>
+          <article class="feature-card"><h3>Проектировщики</h3><p>РД, спецификации, схемы, корректировки.</p></article>
+          <article class="feature-card"><h3>ИД и QA/QC</h3><p>Исполнительная документация, паспорта, журналы, акты.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="registry-terms">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Условия</p><h2>Как работает закрытый реестр</h2></div>
+        <div class="feature-grid three">
+          <article class="feature-card"><h3>Данные не публичные</h3><p>Карточки поставщиков видит оператор. Клиент получает контакты только при релевантной рекомендации.</p></article>
+          <article class="feature-card"><h3>Нет гарантии заявок</h3><p>Реестр не является маркетплейсом и не обещает поток лидов. Он используется под конкретные слабые места.</p></article>
+          <article class="feature-card"><h3>Есть проверка</h3><p>Перед включением оператор смотрит категорию, регион, опыт, документы, условия оплаты и ограничения.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section muted" id="supplier-form">
+      <div class="container upload-layout">
+        <div>
+          <p class="eyebrow">Анкета</p>
+          <h2>Подайте заявку в закрытый реестр</h2>
+          <p class="section-copy">Форма отправляется на <code>/api/supplier-requests</code>. После отправки создаётся запись со статусом "новая", файлы сохраняются в приватное хранилище, оператор получает уведомление.</p>
+        </div>
+        <form class="upload-form" data-api-form data-endpoint="/api/supplier-requests" data-success="Анкета поставщика отправлена. Статус: новая.">
+          <div class="form-grid">
+            <label>Компания<input type="text" name="company_name" required placeholder="ООО Техпоставка"></label>
+            <label>ИНН<input type="text" name="inn" required placeholder="7700000000"></label>
+            <label>ОГРН<input type="text" name="ogrn" placeholder="1027700000000"></label>
+            <label>Контактное лицо<input type="text" name="contact_person" required placeholder="Иван Петров"></label>
+            <label>Телефон<input type="tel" name="phone" required placeholder="+7 900 000-00-00"></label>
+            <label>Email<input type="email" name="email" required placeholder="partner@example.ru"></label>
+            <label>Сайт<input type="url" name="website" placeholder="https://example.ru"></label>
+            <label>Город<input type="text" name="city" placeholder="Екатеринбург"></label>
+            <label>Регионы работы<input type="text" name="regions" required placeholder="Урал, Сибирь, Москва"></label>
+            <label>НДС<select name="vat"><option>Да</option><option>Нет</option></select></label>
+            <label>Отсрочка<select name="deferment"><option>Нет</option><option>Да</option><option>По условиям проекта</option></select></label>
+            <label>Условия отсрочки<input type="text" name="deferment_terms" placeholder="до 30 дней от 1 млн ₽"></label>
+            <label>Минимальный бюджет<input type="text" name="min_budget" placeholder="от 500 000 ₽"></label>
+            <label>Срок реакции<input type="text" name="response_time" placeholder="1 рабочий день"></label>
+            <label>Опыт<textarea name="experience" rows="4" placeholder="Типовые объекты, отрасли, ограничения"></textarea></label>
+          </div>
+          <fieldset class="checkbox-group">
+            <legend>Категории работ</legend>
+            <label><input type="checkbox" name="categories" value="supply"> Поставка</label>
+            <label><input type="checkbox" name="categories" value="installation"> Монтаж</label>
+            <label><input type="checkbox" name="categories" value="commissioning"> ПНР</label>
+            <label><input type="checkbox" name="categories" value="design"> Проектирование</label>
+            <label><input type="checkbox" name="categories" value="documentation"> Исполнительная документация</label>
+            <label><input type="checkbox" name="categories" value="service"> Сервис</label>
+          </fieldset>
+          <div class="file-grid">
+            <label class="file-input"><input type="file" name="company_card"><span>Карточка компании</span><small data-file-label>PDF/DOCX</small></label>
+            <label class="file-input"><input type="file" name="requisites"><span>Реквизиты</span><small data-file-label>PDF/DOCX</small></label>
+            <label class="file-input"><input type="file" name="presentation"><span>Презентация</span><small data-file-label>PDF/PPTX</small></label>
+            <label class="file-input"><input type="file" name="licenses" multiple><span>Сертификаты / лицензии</span><small data-file-label>если есть</small></label>
+          </div>
+          <label class="consent"><input type="checkbox" required> Согласен с условиями реестра и обработкой персональных данных</label>
+          <button class="button primary" type="submit">Отправить анкету</button>
+          <p class="form-result" data-form-result></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">FAQ</p><h2>Частые вопросы поставщиков</h2></div>
+        <div class="faq-grid">
+          <article><h3>Это платно?</h3><p>Подача анкеты не требует оплаты. Коммерческие условия партнёрских работ согласуются отдельно.</p></article>
+          <article><h3>Это маркетплейс?</h3><p>Нет. Реестр закрытый, контакты передаются только под конкретную рекомендацию.</p></article>
+          <article><h3>Как часто будут заявки?</h3><p>Заявки не гарантируются. Всё зависит от профиля клиентов и релевантности вашей карточки.</p></article>
+          <article><h3>Кто видит мои данные?</h3><p>Оператор и администратор сервиса. Клиент видит только те данные, которые оператор разрешил показать.</p></article>
+          <article><h3>Что нужно, чтобы попасть в реестр?</h3><p>Понятный профиль, рабочие контакты, подтверждаемые компетенции, региональная готовность и прозрачные условия.</p></article>
+          <article><h3>Можете отказать?</h3><p>Да. Оператор может отказать, отправить на проверку или ограничить использование карточки.</p></article>
+          <article><h3>Передаются ли контакты клиентам?</h3><p>Да, но только при релевантной рекомендации и с обязательным дисклеймером.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>закрытый реестр</small></span></a></div><nav><a href="index.html">Главная</a><a href="legal.html#registry">Условия реестра</a><a href="login.html">Войти</a></nav></div></footer>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

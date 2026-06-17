@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход и регистрация - TenderCheck</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <section class="auth-media">
+      <img src="assets/img/client-portal.png" alt="Клиентский портал TenderCheck">
+      <a class="brand auth-brand" href="index.html"><img src="assets/img/logo.png" alt=""><span><strong>TenderCheck</strong><small>личный кабинет</small></span></a>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="active" data-auth-tab="login">Вход</button>
+        <button type="button" data-auth-tab="register">Регистрация</button>
+        <button type="button" data-auth-tab="recover">Пароль</button>
+      </div>
+
+      <form class="auth-form active" data-auth-form="login" data-api-form data-endpoint="/api/auth/login" data-success="Вход выполнен. Откройте свой обзор в кабинете.">
+        <h1>Войти в кабинет</h1>
+        <label>Email<input type="email" name="email" required placeholder="mail@example.ru"></label>
+        <label>Пароль<input type="password" name="password" required placeholder="Ваш пароль"></label>
+        <button class="button primary" type="submit">Войти</button>
+        <p class="form-result" data-form-result></p>
+        <a href="dashboard.html">Открыть кабинет</a>
+      </form>
+
+      <form class="auth-form" data-auth-form="register" data-api-form data-endpoint="/api/auth/register" data-success="Регистрация создана. Проверьте email для подтверждения.">
+        <h1>Создать аккаунт</h1>
+        <div class="form-grid one">
+          <label>ФИО<input type="text" name="full_name" required placeholder="Иван Петров"></label>
+          <label>Компания<input type="text" name="company" required placeholder="ООО Альфа Инжиниринг"></label>
+          <label>ИНН<input type="text" name="inn" required placeholder="7700000000"></label>
+          <label>Телефон<input type="tel" name="phone" required placeholder="+7 900 000-00-00"></label>
+          <label>Email<input type="email" name="email" required placeholder="mail@example.ru"></label>
+          <label>Пароль<input type="password" name="password" minlength="8" required placeholder="Минимум 8 символов"></label>
+          <label>Повтор пароля<input type="password" name="password_repeat" minlength="8" required placeholder="Повторите пароль"></label>
+        </div>
+        <label class="consent"><input type="checkbox" required> Согласен с публичной офертой</label>
+        <label class="consent"><input type="checkbox" required> Согласен на обработку персональных данных</label>
+        <label class="consent"><input type="checkbox" required> Подтверждаю право загружать документы</label>
+        <button class="button primary" type="submit">Зарегистрироваться</button>
+        <p class="form-result" data-form-result></p>
+      </form>
+
+      <form class="auth-form" data-auth-form="recover" data-api-form data-endpoint="/api/auth/recover" data-success="Инструкция по восстановлению отправлена на email.">
+        <h1>Восстановить пароль</h1>
+        <p class="section-copy">Введите email аккаунта. Backend должен отправить одноразовую ссылку и ограничить частоту запросов.</p>
+        <label>Email<input type="email" name="email" required placeholder="mail@example.ru"></label>
+        <button class="button primary" type="submit">Отправить ссылку</button>
+        <p class="form-result" data-form-result></p>
+      </form>
+    </section>
+  </main>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
