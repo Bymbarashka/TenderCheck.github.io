@@ -2944,3 +2944,215 @@ h2 {
     font-size: 30px;
   }
 }
+
+/* TenderCheck homepage refinement: denser brand, cleaner hero, stricter service tone. */
+.portal-header .site-header,
+.site-header {
+  min-height: 94px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.brand {
+  gap: 16px;
+}
+
+.brand img {
+  width: 64px;
+  height: 64px;
+}
+
+.brand strong {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.brand small {
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.eyebrow,
+.hero .eyebrow,
+.portal-upload .eyebrow,
+.upload-section .eyebrow {
+  color: var(--cyan);
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.portal-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, transparent 0 42%, rgba(56, 216, 255, .22) 42.1%, transparent 42.4%),
+    linear-gradient(90deg, transparent 0 78%, rgba(56, 216, 255, .16) 78.1%, transparent 78.35%),
+    linear-gradient(180deg, transparent 0 20%, rgba(56, 216, 255, .16) 20.1%, transparent 20.35%);
+  opacity: .42;
+}
+
+.portal-hero-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 920px);
+  justify-content: start;
+}
+
+.portal-hero-copy {
+  max-width: 920px;
+}
+
+.hero-brand-panel {
+  min-height: 132px;
+  padding: 18px 24px;
+  gap: 20px;
+}
+
+.hero-brand-panel img {
+  width: 136px;
+  height: 136px;
+}
+
+.hero-brand-panel strong {
+  font-size: 20px;
+}
+
+.hero-brand-panel span {
+  font-size: 15px;
+}
+
+.portal-hero .eyebrow {
+  font-size: 18px;
+}
+
+.price-card.featured {
+  position: relative;
+  color: var(--ink);
+  border-color: rgba(56, 216, 255, .86);
+  background:
+    radial-gradient(circle at 18% 0%, rgba(56, 216, 255, .18), transparent 44%),
+    linear-gradient(180deg, rgba(6, 24, 44, .98), rgba(4, 15, 29, .96));
+  box-shadow: 0 0 0 1px rgba(56, 216, 255, .2), 0 22px 54px rgba(0, 191, 255, .16);
+}
+
+.price-card.featured h3,
+.price-card.featured p,
+.price-card.featured b {
+  color: var(--ink);
+}
+
+.tariff-badge {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 7px 10px;
+  border: 1px solid rgba(56, 216, 255, .5);
+  color: var(--cyan);
+  background: rgba(56, 216, 255, .1);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.cabinet-note {
+  margin-top: 14px;
+}
+
+.footer-grid {
+  gap: 42px;
+}
+
+.site-footer {
+  padding: 56px 0;
+  font-size: 16px;
+}
+
+.site-footer p,
+.site-footer a,
+.site-footer span {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.site-footer nav strong {
+  color: #f4f8ff;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.footer-disclaimer {
+  margin-top: 14px;
+  color: rgba(244, 248, 255, .68);
+}
+
+@media (max-width: 1040px) {
+  .portal-header .site-header,
+  .site-header {
+    min-height: 82px;
+  }
+
+  .brand img {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 767px) {
+  .portal-header .site-header,
+  .site-header {
+    min-height: 68px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .brand strong {
+    font-size: 20px;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .hero-brand-panel {
+    grid-template-columns: 92px 1fr;
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .hero-brand-panel img {
+    width: 92px;
+    height: 92px;
+  }
+
+  .hero-brand-panel strong {
+    font-size: 17px;
+  }
+
+  .hero-brand-panel span {
+    font-size: 13px;
+  }
+
+  .portal-hero .eyebrow,
+  .eyebrow {
+    font-size: 15px;
+  }
+
+  .site-footer {
+    padding: 42px 0;
+  }
+}
