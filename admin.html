@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -52,7 +52,7 @@
       <div class="app-grid">
         <article class="app-panel large">
           <h2>Карточка заявки оператора</h2>
-          <div class="detail-grid"><p><b>Клиент:</b> ООО Альфа Инжиниринг</p><p><b>ИНН:</b> 7700000000</p><p><b>Тариф:</b> Полный конструктор</p><p><b>Оплата:</b> ожидает оплаты</p><p><b>Статус:</b> в работе</p><p><b>Оператор:</b> И. Орлов</p></div>
+          <div class="detail-grid"><p><b>Клиент:</b> ООО Альфа Инжиниринг</p><p><b>ИНН:</b> 7700000000</p><p><b>Тариф:</b> Комплексная экспертиза</p><p><b>Оплата:</b> ожидает оплаты</p><p><b>Статус:</b> в работе</p><p><b>Оператор:</b> И. Орлов</p></div>
           <div class="toolbar"><button class="button secondary">Принята</button><button class="button secondary">Нужны уточнения</button><button class="button secondary">Отчёт готов</button><button class="button secondary">Завершена</button></div>
           <h3>Редактор матрицы</h3>
           <table class="matrix-table editable-table"><thead><tr><th>Блок</th><th>Статус</th><th>Комментарий</th><th>Рекомендация</th><th>Клиенту</th></tr></thead><tbody>
@@ -68,7 +68,7 @@
         <article class="app-panel">
           <h2>Документы</h2><ul class="file-list"><li>КП.pdf</li><li>Смета.xlsx</li><li>ТЗ.docx</li></ul>
           <h2>Внутренние заметки</h2><textarea rows="4" placeholder="Не видно клиенту"></textarea>
-          <h2>Roadmap</h2><form data-api-form data-endpoint="/api/operator/roadmap" data-success="Roadmap сохранён."><input name="title" placeholder="Шаг"><textarea name="description" placeholder="Описание"></textarea><select name="priority"><option>Высокий</option><option>Средний</option><option>Низкий</option></select><input name="due_note" placeholder="Срок"><label class="consent"><input type="checkbox" checked> Показывать клиенту</label><button class="button secondary" type="submit">Добавить</button><p class="form-result" data-form-result></p></form>
+          <h2>План действий</h2><form data-api-form data-endpoint="/api/operator/roadmap" data-success="План действий сохранён."><input name="title" placeholder="Шаг"><textarea name="description" placeholder="Описание"></textarea><select name="priority"><option>Высокий</option><option>Средний</option><option>Низкий</option></select><input name="due_note" placeholder="Срок"><label class="consent"><input type="checkbox" checked> Показывать клиенту</label><button class="button secondary" type="submit">Добавить</button><p class="form-result" data-form-result></p></form>
           <h2>Рекомендации</h2><form data-api-form data-endpoint="/api/operator/recommendations" data-success="Поставщик привязан к заявке."><input name="role" placeholder="Роль"><select name="supplier"><option>УралПНР</option><option>ТехПоставка</option></select><textarea name="comment" placeholder="Комментарий"></textarea><label class="consent"><input type="checkbox"> Показывать клиенту</label><button class="button secondary" type="submit">Привязать</button><p class="form-result" data-form-result></p></form>
         </article>
       </div>
@@ -82,7 +82,7 @@
 
     <section class="app-section" id="admin-reports" data-tab-panel><article class="app-panel"><h2>Отчёты</h2><form class="upload-form" data-api-form data-endpoint="/api/operator/reports" data-success="Отчёт загружен и готов к публикации."><label>Заявка<select><option>TC-1042</option></select></label><label class="file-input"><input type="file" name="pdf" accept=".pdf"><span>Загрузить PDF</span><small data-file-label>PDF</small></label><label class="file-input"><input type="file" name="docx" accept=".docx"><span>Загрузить DOCX</span><small data-file-label>если доступно</small></label><label class="file-input"><input type="file" name="attachments" multiple><span>Приложения</span><small data-file-label>любые файлы</small></label><button class="button primary">Опубликовать клиенту</button><button class="button secondary" type="button">Скрыть отчёт</button><p class="form-result" data-form-result></p></form></article></section>
 
-    <section class="app-section" id="tariffs" data-tab-panel><article class="app-panel"><h2>Тарифы</h2><table class="matrix-table"><tbody><tr><td>Экспресс</td><td>15 000 ₽</td><td>активен</td></tr><tr><td>Полный конструктор</td><td>60 000 ₽</td><td>активен</td></tr><tr><td>Технический логист</td><td>150 000 ₽ / месяц</td><td>активен</td></tr></tbody></table></article></section>
+    <section class="app-section" id="tariffs" data-tab-panel><article class="app-panel"><h2>Тарифы</h2><table class="matrix-table"><tbody><tr><td>Экспресс-анализ</td><td>15 000 ₽</td><td>активен</td></tr><tr><td>Комплексная экспертиза</td><td>60 000 ₽</td><td>активен</td></tr><tr><td>Абонентское сопровождение</td><td>150 000 ₽ / месяц</td><td>активен</td></tr></tbody></table></article></section>
 
     <section class="app-section" id="payments" data-tab-panel><article class="app-panel"><h2>Платежи</h2><form class="filter-row" data-api-form data-endpoint="/api/operator/payments" data-success="Счёт создан."><input placeholder="Компания"><input placeholder="Сумма"><select><option>ожидает оплаты</option><option>оплачен</option><option>отменён</option><option>возврат</option><option>просрочен</option></select><button class="button primary">Создать счёт</button><p class="form-result" data-form-result></p></form><table class="matrix-table"><tbody><tr><td>Счёт 24-061</td><td>Альфа Инжиниринг</td><td><span class="status yellow">ожидает оплаты</span></td><td>35 000 ₽</td></tr></tbody></table></article></section>
 

@@ -420,9 +420,14 @@ h3 {
   margin-top: 24px;
 }
 
+.legend strong {
+  flex: 1 0 100%;
+}
+
 .legend span {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
+  flex: 1 1 260px;
   gap: 7px;
   color: var(--muted);
   font-weight: 700;
