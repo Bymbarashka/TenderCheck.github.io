@@ -14,8 +14,8 @@
       <a href="#all-applications" data-tab-link>Все заявки</a>
       <a href="#clients" data-tab-link>Клиенты</a>
       <a href="#operator-card" data-tab-link>Карточка заявки</a>
-      <a href="#supplier-registry" data-tab-link>Реестр поставщиков</a>
-      <a href="#supplier-requests" data-tab-link>Заявки поставщиков</a>
+      <a href="#supplier-registry" data-tab-link>Поставщики и исполнители</a>
+      <a href="#supplier-requests" data-tab-link>Заявки в реестр</a>
       <a href="#admin-reports" data-tab-link>Отчёты</a>
       <a href="#tariffs" data-tab-link>Тарифы</a>
       <a href="#payments" data-tab-link>Платежи</a>
@@ -36,7 +36,7 @@
         <article><span>Ждут уточнений</span><strong>4</strong><small>нужен ответ клиента</small></article>
         <article><span>Отчётов готово</span><strong>5</strong><small>2 не опубликованы</small></article>
         <article><span>Просрочено</span><strong>1</strong><small>контроль сегодня</small></article>
-        <article><span>Новых поставщиков</span><strong>9</strong><small>на проверку</small></article>
+        <article><span>Новых анкет в реестр</span><strong>9</strong><small>на проверку</small></article>
       </div>
     </section>
 
@@ -54,8 +54,8 @@
           <h2>Карточка заявки оператора</h2>
           <div class="detail-grid"><p><b>Клиент:</b> ООО Альфа Инжиниринг</p><p><b>ИНН:</b> 7700000000</p><p><b>Тариф:</b> Комплексная экспертиза</p><p><b>Оплата:</b> ожидает оплаты</p><p><b>Статус:</b> в работе</p><p><b>Оператор:</b> И. Орлов</p></div>
           <div class="toolbar"><button class="button secondary">Принята</button><button class="button secondary">Нужны уточнения</button><button class="button secondary">Отчёт готов</button><button class="button secondary">Завершена</button></div>
-          <h3>Редактор матрицы</h3>
-          <table class="matrix-table editable-table"><thead><tr><th>Блок</th><th>Статус</th><th>Комментарий</th><th>Рекомендация</th><th>Клиенту</th></tr></thead><tbody>
+          <h3>Матрица 7 блоков</h3>
+          <table class="matrix-table editable-table"><thead><tr><th>Блок</th><th>Статус</th><th>Комментарий</th><th>Вариант закрытия</th><th>Клиенту</th></tr></thead><tbody>
             <tr><td>Поставка</td><td><select><option>частично</option><option>закрыто</option><option>риск</option><option>нет данных</option></select></td><td><input value="нет отсрочки"></td><td><input value="запросить условия"></td><td><input type="checkbox" checked></td></tr>
             <tr><td>Монтаж</td><td><select><option>закрыто</option><option>частично</option><option>риск</option></select></td><td><input value="собственная бригада"></td><td><input value="проверить график"></td><td><input type="checkbox" checked></td></tr>
             <tr><td>ПНР</td><td><select><option>риск</option><option>частично</option><option>закрыто</option></select></td><td><input value="нет инженера"></td><td><input value="подобрать ПНР"></td><td><input type="checkbox" checked></td></tr>
@@ -68,17 +68,17 @@
         <article class="app-panel">
           <h2>Документы</h2><ul class="file-list"><li>КП.pdf</li><li>Смета.xlsx</li><li>ТЗ.docx</li></ul>
           <h2>Внутренние заметки</h2><textarea rows="4" placeholder="Не видно клиенту"></textarea>
-          <h2>План действий</h2><form data-api-form data-endpoint="/api/operator/roadmap" data-success="План действий сохранён."><input name="title" placeholder="Шаг"><textarea name="description" placeholder="Описание"></textarea><select name="priority"><option>Высокий</option><option>Средний</option><option>Низкий</option></select><input name="due_note" placeholder="Срок"><label class="consent"><input type="checkbox" checked> Показывать клиенту</label><button class="button secondary" type="submit">Добавить</button><p class="form-result" data-form-result></p></form>
-          <h2>Рекомендации</h2><form data-api-form data-endpoint="/api/operator/recommendations" data-success="Поставщик привязан к заявке."><input name="role" placeholder="Роль"><select name="supplier"><option>УралПНР</option><option>ТехПоставка</option></select><textarea name="comment" placeholder="Комментарий"></textarea><label class="consent"><input type="checkbox"> Показывать клиенту</label><button class="button secondary" type="submit">Привязать</button><p class="form-result" data-form-result></p></form>
+          <h2>Roadmap</h2><form data-api-form data-endpoint="/api/operator/roadmap" data-success="Roadmap сохранён."><input name="title" placeholder="Шаг"><textarea name="description" placeholder="Описание"></textarea><select name="priority"><option>Высокий</option><option>Средний</option><option>Низкий</option></select><input name="due_note" placeholder="Срок"><label class="consent"><input type="checkbox" checked> Показывать клиенту</label><button class="button secondary" type="submit">Добавить</button><p class="form-result" data-form-result></p></form>
+          <h2>Варианты закрытия</h2><form data-api-form data-endpoint="/api/operator/recommendations" data-success="Поставщик или исполнитель привязан к заявке."><input name="role" placeholder="Роль"><select name="supplier"><option>УралПНР</option><option>ТехПоставка</option></select><textarea name="comment" placeholder="Комментарий"></textarea><label class="consent"><input type="checkbox"> Показывать клиенту</label><button class="button secondary" type="submit">Привязать</button><p class="form-result" data-form-result></p></form>
         </article>
       </div>
     </section>
 
     <section class="app-section" id="clients" data-tab-panel><article class="app-panel"><h2>Клиенты</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>ИНН</th><th>Заявки</th><th>Тариф</th><th>Контакт</th></tr></thead><tbody><tr><td>Альфа Инжиниринг</td><td>7700000000</td><td>3</td><td>Логист</td><td>Иван Петров</td></tr></tbody></table></article></section>
 
-    <section class="app-section" id="supplier-registry" data-tab-panel><article class="app-panel"><h2>Реестр поставщиков</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>Категория</th><th>Регион</th><th>НДС</th><th>Отсрочка</th><th>Рейтинг</th><th>Статус</th></tr></thead><tbody><tr><td>УралПНР</td><td>ПНР</td><td>Урал</td><td>Да</td><td>по проекту</td><td>4.7</td><td><span class="status green">проверен</span></td></tr><tr><td>ТехПоставка</td><td>Поставка</td><td>РФ</td><td>Да</td><td>30 дней</td><td>4.4</td><td><span class="status yellow">на проверке</span></td></tr></tbody></table><h3>Карточка поставщика</h3><div class="detail-grid"><p>ИНН, ОГРН, контакт, телефон, email, сайт, регионы, категории, НДС, отсрочка, минимальный бюджет, срок реакции, опыт, заметки, рейтинг и статус.</p></div></article></section>
+    <section class="app-section" id="supplier-registry" data-tab-panel><article class="app-panel"><h2>Поставщики и исполнители</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>Категория</th><th>Регион</th><th>НДС</th><th>Отсрочка</th><th>Рейтинг</th><th>Статус</th></tr></thead><tbody><tr><td>УралПНР</td><td>ПНР</td><td>Урал</td><td>Да</td><td>по проекту</td><td>4.7</td><td><span class="status green">проверен</span></td></tr><tr><td>ТехПоставка</td><td>Поставка</td><td>РФ</td><td>Да</td><td>30 дней</td><td>4.4</td><td><span class="status yellow">на проверке</span></td></tr></tbody></table><h3>Карточка поставщика или исполнителя</h3><div class="detail-grid"><p>ИНН, ОГРН, контакт, телефон, email, сайт, регионы, категории, НДС, отсрочка, минимальный бюджет, срок реакции, опыт, заметки, рейтинг, статус, видимость для клиента и варианты закрытия слабых мест.</p></div></article></section>
 
-    <section class="app-section" id="supplier-requests" data-tab-panel><article class="app-panel"><h2>Заявки поставщиков</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>Категория</th><th>Дата</th><th>Статус</th><th>Действие</th></tr></thead><tbody><tr><td>ИнжСервис</td><td>ИД</td><td>17.06.2026</td><td><span class="status yellow">новая</span></td><td><button class="button secondary">Принять в реестр</button></td></tr></tbody></table></article></section>
+    <section class="app-section" id="supplier-requests" data-tab-panel><article class="app-panel"><h2>Заявки поставщиков и исполнителей</h2><table class="matrix-table"><thead><tr><th>Компания</th><th>Категория</th><th>Дата</th><th>Статус</th><th>Действие</th></tr></thead><tbody><tr><td>ИнжСервис</td><td>ИД</td><td>17.06.2026</td><td><span class="status yellow">новая</span></td><td><button class="button secondary">Принять в реестр</button></td></tr></tbody></table></article></section>
 
     <section class="app-section" id="admin-reports" data-tab-panel><article class="app-panel"><h2>Отчёты</h2><form class="upload-form" data-api-form data-endpoint="/api/operator/reports" data-success="Отчёт загружен и готов к публикации."><label>Заявка<select><option>TC-1042</option></select></label><label class="file-input"><input type="file" name="pdf" accept=".pdf"><span>Загрузить PDF</span><small data-file-label>PDF</small></label><label class="file-input"><input type="file" name="docx" accept=".docx"><span>Загрузить DOCX</span><small data-file-label>если доступно</small></label><label class="file-input"><input type="file" name="attachments" multiple><span>Приложения</span><small data-file-label>любые файлы</small></label><button class="button primary">Опубликовать клиенту</button><button class="button secondary" type="button">Скрыть отчёт</button><p class="form-result" data-form-result></p></form></article></section>
 
